@@ -25,8 +25,8 @@ def tweet_parser(data):
 
     user = deepcopy(d["user"])
     user["created_at"] = to_iso(user["created_at"])
-
     d.pop("user", None)
+    d["user.id_str"] = user["id_str"]
     d.pop("entities", None)
     d.pop("extended_entities", None)
     d.pop("quoted_status", None)
